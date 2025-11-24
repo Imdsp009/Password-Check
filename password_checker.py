@@ -1,6 +1,8 @@
 def check_password(password):
-    if len(password) < 8:
-        return "❌ Weak: Password must be at least 8 characters long."
-    if not any(char.isdigit() for char in password):
-        return "❌ Weak: Password must contain at least one number."
-    return "🟡 Medium Strength"
+    special = "!@#$%^&*()?"
+    
+    if not any(char.isupper() for char in password):
+        return "❌ Weak: Must contain one uppercase letter."
+    if not any(char in special for char in password):
+        return "❌ Weak: Must contain one special character."
+    return "🟢 Strong password"
