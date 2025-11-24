@@ -1,4 +1,4 @@
 def check_password(pw):
-    if len(pw) < 8:
-        return "❌ Too short"
-    return "✔ Length OK"
+    if not any(char.isdigit() for char in pw):
+        return "❌ Must contain a number"
+    return "✔ Number OK"
