@@ -1,8 +1,7 @@
 def check_password(password):
-    special = "!@#$%^&*()?"
-    
-    if not any(char.isupper() for char in password):
-        return "❌ Weak: Must contain one uppercase letter."
-    if not any(char in special for char in password):
-        return "❌ Weak: Must contain one special character."
+    special = "!@#$%^&*?"
+    if not any(c.isupper() for c in password):
+        return "❌ Must contain a capital letter"
+    if not any(c in special for c in password):
+        return "❌ Must contain a special character"
     return "🟢 Strong password"
